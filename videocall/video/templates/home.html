@@ -1,0 +1,72 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <style>*{
+    background-color: black;
+  }
+  .dashboard {
+    margin: auto;
+    width: 100%;
+    padding: 10px;
+    color: white;
+    ;
+  }
+  
+  /** align the text inside the div named dashboard to the center */
+  .dashboard h1 {
+    text-emphasis-color: black;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .dashboard a {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  
+  .dashboard a {
+    margin-top: 7px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+  
+  .dashboard a:hover {
+    background-color: #45a049;
+  }
+  
+  .dashboard {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }</style>
+<head >
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Video Conference</title>
+  <link rel="stylesheet" href="../static/home.css">
+  <body>
+    <div class="dashboard">
+        <h1>Welcome, {{name}}!</h1>
+        <!-- create a "New Meeting" button -->
+        <a href="{% url 'meeting' %}" class="button">New Meeting</a>
+        <a href="{% url 'join_room' %}" class="button">Join Meeting</a>
+        <a href="{% url 'logout' %}" class="button">Logout</a>
+    </div>
+  </body>
+</head>
+</html>

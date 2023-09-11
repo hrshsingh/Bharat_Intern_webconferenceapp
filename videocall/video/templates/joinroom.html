@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    *{
+        background-color: blueviolet;
+    }
+    body {
+      display: flex; 
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      font-family: Arial;
+    }
+    s
+    h1 {
+        color: white;
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;  
+    }
+    
+    input[type="text"] {
+      padding: 12px 20px;
+      width: 400px;
+      margin: 8px 0;
+      box-sizing: border-box;
+      border: 2px solid #555;
+      border-radius: 4px;
+    }
+    
+    input[type="submit"] {
+      width: 200px;
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Welcome{{name}}!</h1>
+
+  <form method="post">
+    {% csrf_token %}
+    <input type="text" placeholder="Enter text" name="link">
+    <input type="submit" value="Submit">
+  </form>
+
+</body>
+</html>
